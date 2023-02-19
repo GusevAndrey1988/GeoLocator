@@ -1,7 +1,7 @@
 <?php
 
 use Feature\GeoLocator\ErrorHandler;
-use Feature\GeoLocator\HttpClient;
+use Feature\GeoLocator\HttpClients\SimpleHttpClient;
 use Feature\GeoLocator\Ip;
 use Feature\GeoLocator\Locators\ChainLocator;
 use Feature\GeoLocator\Locators\DaDataLocator;
@@ -13,7 +13,7 @@ require_once './vendor/autoload.php';
 
 $logger = new SimpleFileLogger(__DIR__.'/log.txt');
 $errorHandler = new ErrorHandler($logger);
-$httpClient = new HttpClient();
+$httpClient = new SimpleHttpClient();
 
 $locator = new ChainLocator(
     new MuteLocator(
