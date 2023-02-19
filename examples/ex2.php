@@ -20,11 +20,11 @@ $httpClient = new HttpClient();
 
 $locator = new CacheLocator(new ChainLocator(
     new MuteLocator(
-        new DaDataLocator($httpClient, '8777922b10147ddd898cf1b6e21d7fef7029bc89'),
+        new DaDataLocator($httpClient, getenv('DADATA_API_KEY')),
         $errorHandler
     ),
     new MuteLocator(
-        new IpGeoLocationLocator($httpClient, '1f4cffbcf3814ac798efa7b5f6e15139'),
+        new IpGeoLocationLocator($httpClient, getenv('IPGEOLOCATION_API_KEY')),
         $errorHandler
     ),
 ), $cache);
