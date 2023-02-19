@@ -8,8 +8,8 @@ class Location
 {
     public function __construct(
         private string $country,
-        private ?string $region,
-        private ?string $city,
+        private ?string $region = null,
+        private ?string $city = null,
     ) {
     }
 
