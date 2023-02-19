@@ -13,6 +13,6 @@
   },
   "require": {
     "psr/log": "^3.0",
-    "psr/cache": "^3.0"
+    "psr/simple-cache": "^3.0"
   }
 }

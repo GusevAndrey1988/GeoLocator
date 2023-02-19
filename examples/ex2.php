@@ -1,8 +1,10 @@
 <?php
 
+use Feature\GeoLocator\Cache\SimpleFileCache;
 use Feature\GeoLocator\ErrorHandler;
 use Feature\GeoLocator\HttpClient;
 use Feature\GeoLocator\Ip;
+use Feature\GeoLocator\Locators\CacheLocator;
 use Feature\GeoLocator\Locators\ChainLocator;
 use Feature\GeoLocator\Locators\DaDataLocator;
 use Feature\GeoLocator\Locators\IpGeoLocationLocator;
@@ -11,11 +13,12 @@ use Feature\GeoLocator\Loggers\SimpleFileLogger;
 
 require_once './vendor/autoload.php';
 
+$cache = new SimpleFileCache(__DIR__.'/cache');
 $logger = new SimpleFileLogger(__DIR__.'/log.txt');
 $errorHandler = new ErrorHandler($logger);
 $httpClient = new HttpClient();
 
-$locator = new ChainLocator(
+$locator = new CacheLocator(new ChainLocator(
     new MuteLocator(
         new DaDataLocator($httpClient, '8777922b10147ddd898cf1b6e21d7fef7029bc89'),
         $errorHandler
@@ -24,6 +27,6 @@ $locator = new ChainLocator(
         new IpGeoLocationLocator($httpClient, '1f4cffbcf3814ac798efa7b5f6e15139'),
         $errorHandler
     ),
-);
+), $cache);
 
 var_dump($locator->locate(new Ip('8.8.8.8')));
