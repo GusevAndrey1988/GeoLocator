@@ -4,9 +4,9 @@ declare(strict_types = 1);
 
 namespace Future\GeoLocator\Test;
 
-use Feature\GeoLocator\DaDataLocator;
 use Feature\GeoLocator\HttpClient;
 use Feature\GeoLocator\Ip;
+use Feature\GeoLocator\Locators\DaDataLocator;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 

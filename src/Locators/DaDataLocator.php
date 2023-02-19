@@ -2,7 +2,12 @@
 
 declare(strict_types = 1);
 
-namespace Feature\GeoLocator;
+namespace Feature\GeoLocator\Locators;
+
+use Feature\GeoLocator\HttpClient;
+use Feature\GeoLocator\Ip;
+use Feature\GeoLocator\Location;
+use Feature\GeoLocator\Locator;
 
 class DaDataLocator implements Locator
 {

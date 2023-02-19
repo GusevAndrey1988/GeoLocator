@@ -6,9 +6,9 @@ namespace Future\GeoLocator\Test;
 
 use Feature\GeoLocator\HttpClient;
 use Feature\GeoLocator\Ip;
+use Feature\GeoLocator\Locators\IpGeoLocationLocator;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
-use Feature\GeoLocator\IpGeoLocationLocator;
 
 class IpGeoLocationLocatorTest extends TestCase
 {

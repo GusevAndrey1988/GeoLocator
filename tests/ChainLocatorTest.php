@@ -6,8 +6,8 @@ namespace Future\GeoLocator\Test;
 
 use Feature\GeoLocator\Location;
 use Feature\GeoLocator\Locator;
-use Feature\GeoLocator\ChainLocator;
 use Feature\GeoLocator\Ip;
+use Feature\GeoLocator\Locators\ChainLocator;
 use PHPUnit\Framework\Attributes\Test;
 use PHPUnit\Framework\TestCase;
 
