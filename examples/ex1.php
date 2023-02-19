@@ -7,11 +7,11 @@ use Feature\GeoLocator\Locators\ChainLocator;
 use Feature\GeoLocator\Locators\DaDataLocator;
 use Feature\GeoLocator\Locators\IpGeoLocationLocator;
 use Feature\GeoLocator\Locators\MuteLocator;
-use Feature\GeoLocator\Loggers\FileLogger;
+use Feature\GeoLocator\Loggers\SimpleFileLogger;
 
 require_once './vendor/autoload.php';
 
-$logger = new FileLogger(__DIR__.'/log.txt');
+$logger = new SimpleFileLogger(__DIR__.'/log.txt');
 $errorHandler = new ErrorHandler($logger);
 $httpClient = new HttpClient();
 
